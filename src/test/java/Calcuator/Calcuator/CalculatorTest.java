@@ -27,7 +27,7 @@ public class CalculatorTest extends TestCase {
 
 	@Test
 	public void testMultiplyByZero(){
-		assertEquals(5, this.calculator.multiply(5,0));
+		assertEquals(0, this.calculator.multiply(5,0));
 	}
 	
 }
