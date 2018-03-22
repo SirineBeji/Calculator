@@ -16,10 +16,12 @@
 		<url>https://github.com/SirineBeji/Calculator</url>
 		<developerConnection>scm:git:https://github.com/SirineBeji/Calculator.git</developerConnection>
 	</scm>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
+
 	<distributionManagement>
 		<repository>
 			<id>nexus-releases</id>
@@ -30,6 +32,11 @@
 			<url>http://localhost:8081/repository/maven-snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
+
+
+
+
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -38,6 +45,45 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+
+
+
+
+	<profiles>
+		<profile>
+			<id>releases</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>1.5.1</version>
+						<executions>
+							<execution>
+								<id>default-deploy</id>
+								<phase>deploy</phase>
+								<goals>
+									<goal>deploy</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<serverId>nexus-releases</serverId>
+							<nexusUrl>http://localhost:8081/</nexusUrl>
+							<skipStaging>true</skipStaging>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+
+
+
+
+
 	<build>
 		<plugins>
 			<plugin>
@@ -80,8 +126,16 @@
 					<skipStaging>true</skipStaging>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.4.2</version>
+				<configuration>
+					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<releaseProfiles>releases</releaseProfiles>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-
-	
 </project>
