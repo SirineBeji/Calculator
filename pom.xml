@@ -2,25 +2,24 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>Calcuator</groupId>
-	<artifactId>Calcuator</artifactId>
+	<groupId>Calculator</groupId>
+	<artifactId>Calculator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Calcuator</name>
+
+	<name>Calculator</name>
 	<url>http://maven.apache.org</url>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-
 
 	<scm>
 		<connection>scm:git:https://github.com/SirineBeji/Calculator.git</connection>
 		<url>https://github.com/SirineBeji/Calculator</url>
 		<developerConnection>scm:git:https://github.com/SirineBeji/Calculator.git</developerConnection>
 	</scm>
-
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<distributionManagement>
 		<repository>
 			<id>nexus-releases</id>
@@ -31,8 +30,14 @@
 			<url>http://localhost:8081/repository/maven-snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
-
-
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
@@ -78,14 +83,5 @@
 		</plugins>
 	</build>
 
-
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
+	
 </project>
