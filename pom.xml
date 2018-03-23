@@ -6,7 +6,6 @@
 	<version>0.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-
 	<name>Calculator</name>
 	<url>http://maven.apache.org</url>
 
@@ -33,10 +32,6 @@
 		</snapshotRepository>
 	</distributionManagement>
 
-
-
-
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -45,9 +40,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-
-
 
 
 	<profiles>
@@ -78,10 +70,6 @@
 			</build>
 		</profile>
 	</profiles>
-
-
-
-
 
 
 	<build>
