@@ -13,7 +13,6 @@
 		<connection>scm:git:https://github.com/SirineBeji/Calculator.git</connection>
 		<url>https://github.com/SirineBeji/Calculator</url>
 		<developerConnection>scm:git:https://github.com/SirineBeji/Calculator.git</developerConnection>
-	  <tag>HEAD</tag>
   </scm>
 
 	<properties>
