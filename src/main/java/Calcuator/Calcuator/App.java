@@ -1,14 +1,17 @@
 package Calcuator.Calcuator;
 
-/**
- * Hello world!
- *
- */
+import java.util.Scanner;
+
 public class App 
 {
     public static void main( String[] args )
     {
     	Calculator calculator = new Calculator();
-        System.out.println( calculator.add(120, 150));
+
+        Scanner in = new Scanner(System.in);
+        int a = in.nextInt();
+        int b = in.nextInt();
+        
+        System.out.println(calculator.add(a,b));
     }
 }
