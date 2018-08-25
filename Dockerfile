@@ -2,7 +2,7 @@ FROM maven
 
 WORKDIR /app
 
-ADD .
+ADD . /app
 
 RUN mvn clean package
 
